@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+</head>
+<body>
+    <img src="img/atas.jpg" width="100%" alt="">
+    <nav class="w3-bar w3-black">
+            <button class="w3-bar-item w3-button menu" >mobil</button>
+            <button class="w3-bar-item w3-button menu" >unikom dago</button>
+            <button  class="w3-bar-item w3-button menu">kampus</button>
+            <button  class="w3-bar-item w3-button menu" >artis korea</button>
+            <button  class="w3-bar-item w3-button menu">doraemon</button>
+    </nav>
+    <main class="">
+        <div class="mobil content">
+            <h1>Mobil</h1>
+            <img src="img/img_car.jpg" class="w3-animate-fading" alt="">
+        </div>
+        <div class="unikom-dago content">
+            <h1>Unikom Dago</h1>
+            <img src="img/unikom_dago.jpg" class="w3-animate-zoom" alt="">
+        </div>
+        <div class="kampus content">
+            <h1>Kampus</h1>
+            <img src="img/unikom-du-wide.jpg" class="w3-animate-bottom" alt="">
+        </div>
+        <div class="artis-korea content" >
+            <h1>artis korea</h1>
+            <img src="img/Cha-Eun-woo.jpg" class="w3-animate-left" alt="">
+        </div>
+        <div class="doraemon content">
+            <h1>doraemon</h1>
+            <img src="img/doraemon.png" class="w3-animate-top" alt="">
+        </div>
+    </main>
+    <footer class="w3-blue w3-padding w3-center">
+        <p>Lutfian Rahdiansyah | 10121127 | If 4</p>
+    </footer>
+    <script>
+        const menu = document.querySelectorAll('.menu')
+        const hideContent =(startIsHide = false)=>{
+            const contents = document.querySelectorAll('.content')
+            for (let index = startIsHide == true ? 1 :0; index < contents.length; index++) {
+                contents[index].style.display="none"
+                
+            }
+        }
+       hideContent(true)
+       
+       for (let index = 0; index < menu.length; index++) {
+            // const element = array[index];
+            menu[index].addEventListener('click',function(){
+                const textmenu = this.textContent.split(' ').join('-')
+                hideContent()
+                const content = document.querySelectorAll(`div.${textmenu}`)[0]
+                content.style.display="block"
+            })
+        }
+    </script>
+</body>
+</html>
